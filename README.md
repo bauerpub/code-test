@@ -28,8 +28,8 @@ Sandi Metz"s ["Practial Object Oriented Design in Ruby"](http://www.poodr.com/) 
 
 ### Running Your Solution
 
-- Please tell us how to execute your program, including any system setup, and how the results will be outputed for verification purposes. Clear communication is important to us and we expect to be able to easily follow your instructions.
-- Please ensure that any automated tests you submit can be executed easily and successfully (hint: use a build tool).
+- Please tell us how to execute your program, including any system setup, and how the results will be output for verification purposes. 
+- Clear communication is important to us and we expect to be able to follow your instructions easily.
 
 ### Anonymize Your Solution
 
@@ -52,6 +52,8 @@ We will supply you with a list of auction items and their attributes, and a list
 - Each user can bid only once for each item.
 - It is a silent auction - users do not know each other's bids.
 - Once bidding is finished for all items, the highest bid wins each item.
+- Each user has their own set of preferences
+- Complete rules are in rules.txt
 
 ### Instructions
 
@@ -59,8 +61,9 @@ Write a program that will take the data from `items.json` and `bidders.json` as 
 
 ### Examples
 
-#### Input
+#### Input - items.json, bidders.json
 ```
+"items":
 [
   ["Horses horses horses", "painting", "horses", "$25,000", "200 × 180 in", "Joe Smith"],
   ["Mrs Frisby", "painting", "Mrs Frisby", "$3,000", "31 × 25 in", "Shelley Adler"],
@@ -68,9 +71,16 @@ Write a program that will take the data from `items.json` and `bidders.json` as 
   ["The principles of nature", "painting", "trees", "$50,000", "23 × 15 in", "Jaehyo Lee"],
   ["The Sweet Life", "sculpture", "lollipops", "$100,000", "18 × 12 in", "Elena Bulatova"]
 ]
+
+"bidders" : [
+  [ "name" : "Bob Briskey", "money" : "$200,000"],
+  [ "name" : "Sue Perkins", "money" : "$500,000"],
+  ["name" : "Donald von Neuman","money" : "$20,000"],
+  ["name" : "Amanda Wu", "money" : "$200,000"]
+ ]
 ```
 
-#### Output
+#### Output - the winning bids:
 ```
 [
   ["Horses horses horses", "Bob Briskey", "$50,000"],
